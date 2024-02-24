@@ -23,7 +23,7 @@ def gpages(base):
                 if first:
                     first = False
                     # Add collection to mainpage_body
-                    sub_url = BASEURL + dir
+                    sub_url = f'https://{USERNAME}.github.io/{REPO}/dir'
                     mainpage_body += f'<a href="{sub_url}"><div><img class="cover" src="{img_src}"><div>{dir}</div></div></a><br><br>'
         # Generate subpage
         subpage_html = f'''<html>
