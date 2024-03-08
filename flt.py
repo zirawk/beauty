@@ -1,9 +1,10 @@
 import requests
 import os
+from pathlib import Path
 import sys
 from bs4 import BeautifulSoup
 
-save_dir = "/sdcard/Download/flt/"
+save_dir = "./flt"
 
 
 def doimgs(bs):
@@ -43,6 +44,6 @@ def doit(u):
 first_url = sys.argv[1]
 save_dir = os.path.join(save_dir, BeautifulSoup(requests.get(url=first_url).text, features='html.parser').find('h1').string)
 print(f'Save to: {save_dir}')
-os.makedirs(save_dir)
+Path(save_dir).mkdir(parents=True, exist_ok=True)
 doit(first_url)
 print(f'Completed: {save_dir}')
