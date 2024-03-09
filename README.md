@@ -4,9 +4,9 @@
 
 ## 起因
 
-<https://fulitu.me>上有许多写真，但每页只显示三张图片，且有很多广告。
-于是我用Python写了个脚本，批量下载一个图集中的图片。
-截止到本次commit，共有117个图集，7024张图片（如果我没搞错的话）。
+<https://fulitu.me>的写真，每页只显示三张图片，且有很多广告。
+于是我写了个简单的Python脚本，批量下载一个图集中的图片。
+截止到本次commit，共有114个图集，6547张图片（如果我没搞错的话）。
 由此也有了部署到GitHub Pages的想法，于是又写了个Python脚本，生成html文件。
 
 由于没怎么学过html，Python也没学过多少，代码大多是现查现学的，
@@ -18,6 +18,9 @@
 （我的xp大致是：jk制服，贫乳，白丝，白丝，白丝）
 
 图集的名称是<https://fulitu.me>上的原名，未做修改。个别图集名与实际内容并不相符。
+
+其中*桃良阿宅 - 唤醒 40P*和*[Yoko宅夏]妹汤物语-校服 63P*
+两个图集的图源是<https://xx.knit.bid>，为手动下载。
 
 ## 关于Python脚本
 
@@ -40,19 +43,20 @@ pip install requests beautifulsoup4
 python flt.py <网址>
 ```
 
-将开始递归下载每一页的图片，并保存在`${save_dir}/<图集名称>`下。
+将开始递归下载每一页的图片，并保存在`${save_dir}/<图集名>`下。
 
 如果你进入其他页码，请切换回第一页，否则先前页码的图片将不会被下载。
 
-### gflt.py
+### generate.py
 
-`gflt.py`用于为每个图集生成部署到GitHub Pages的html文件。
-将`USERNAME`和`REPO`修改为你自己的，将`base`修改为存放图集文件夹的目录，相当于`flt.py`中的`save_dir`。
+`generate.py`用于为每个图集生成部署到GitHub Pages的html文件。
+将`USERNAME`和`REPO`修改为你自己的，将`base`修改为存放图集文件夹的目录，
+相当于`flt.py`中的`save_dir`。
 
 然后直接运行命令：
 
 ```bash
-python gflt.py
+python generate.py
 ```
 
 生成的html中的img会使用<https://mirror.ghproxy.com>代理以加速中国大陆地区访问。
@@ -63,6 +67,6 @@ python gflt.py
 `flt.py`下载图片时，每一页的第一张图片会下载两次。
 但<https://fulitu.me>确实把每一页的第一张图片的img标签写了两次。
 
-所以如果在下载中途中断，脚本将终止，需要重新运行命令。
+如果在下载中途中断，脚本将终止，需要重新运行命令。
 
 如果你有能力，我还是建议你自己写。这两个脚本只是我为解决临时需求现学现写的。

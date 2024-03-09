@@ -4,7 +4,7 @@ from pathlib import Path
 import sys
 from bs4 import BeautifulSoup
 
-save_dir = "./flt"
+save_dir = "./img"
 
 
 def doimgs(bs):
