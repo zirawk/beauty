@@ -1,9 +1,9 @@
 import os
 from pathlib import Path
 
-USERNAME = 'songeating'
+USERNAME = 'zirawk'
 REPO = 'beauty'
-BASEURL = f'https://mirror.ghproxy.com/https://raw.githubusercontent.com/{USERNAME}/{REPO}/master/img/'
+BASEURL = f'https://ghfast.top/https://raw.githubusercontent.com/{USERNAME}/{REPO}/master/img/'
 REPO_URL = f'https://github.com/{USERNAME}/{REPO}'
 
 

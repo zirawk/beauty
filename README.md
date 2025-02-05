@@ -1,6 +1,12 @@
 # Beauty
 
-<https://songeating.github.io/beauty>
+<https://zirawk.github.io/beauty>
+
+## 本Fork
+
+将镜像站网址更新为未被墙的<ghfast.top>
+
+另外，<fulitu.me>似乎不再提供服务，故本repo不再增加新写真（大概）
 
 ## 起因
 
